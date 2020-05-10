@@ -28,6 +28,18 @@
         android:text = "Login"
         android:textAllCaps="true"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not registered yet?"/>
+    <TextView
+        android:id="@+id/sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:onClick="openSignupPage"
+        android:clickable="true"
+        android:focusable="true"/>
 
 
 </LinearLayout>
