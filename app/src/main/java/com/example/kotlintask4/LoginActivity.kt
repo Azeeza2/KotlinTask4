@@ -1,14 +1,19 @@
 package com.example.kotlintask4
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.login_page.*
+import kotlinx.android.synthetic.main.register_page.*
 
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
+
+
+
     private val radioSexGroup: RadioGroup? = findViewById(R.id.radioGrp)
     private var radioSexButton: RadioButton? = findViewById(R.id.radioM)
     private val btnDisplay: Button? = null
@@ -32,14 +37,15 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         loginButton?.setOnClickListener(this)
         addListenerOnButton()
-        registerButton?.setOnClickListener(this)
+
+
+
 
     }
 
     override fun onClick(view: View) {
 
-        if (!(!username?.getText().toString().equals("admin")) || !(!password?.getText().toString()
-                .equals("admin"))
+        if (!(!username?.getText().toString().equals("admin")) || !(!password?.getText().toString().equals("admin"))
         ) {
             //correcct password
             Toast.makeText(applicationContext, "Redirecting......", Toast.LENGTH_SHORT).show()
@@ -60,7 +66,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     fun openSignupPage(view: View) {
         var signup: TextView? = findViewById(R.id.sign_up)
         signup?.setOnClickListener(View.OnClickListener() {
-            intent = findViewById(R.id.login_page)
+            intent = findViewById(R.id.register_page)
             startActivity(intent)
         })
 
@@ -81,9 +87,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         });
     }
 
-    fun register(view: View) {
-        finish()
-    }
 }
 
 
